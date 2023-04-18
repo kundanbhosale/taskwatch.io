@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
+import { StyledLabel } from '@styled/label'
 
 const Navbar = () => {
   // const navigate = useNavigate()
@@ -53,7 +54,8 @@ const Navbar = () => {
             width={20}
             height={20}
           />
-          TASKWATCH
+          TASKWATCH           <Label>Beta</Label>
+
         </NavLink>
         <NavLink className={`primary-border-bottom`} to="/my-notes">
           {/* <Icon type="emoji" /> */}
@@ -155,4 +157,10 @@ const Wrapper = styled.div`
     background-position: center;
     background-size: contain;
   }
+`
+
+const Label = styled(StyledLabel)`
+  font-size: 0.6rem;
+  background-color: ${({ theme }) => theme.colors.warning};
+  margin-left: 0.5em;
 `
